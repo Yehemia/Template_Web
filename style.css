@@ -1,0 +1,454 @@
+/* ==================== VARIABEL WARNA - TEMA ANGKASA ==================== */
+:root {
+    --primary-color: #0a1128;
+    --secondary-color: #5d4e8e;
+    --accent-color: #b185db;
+    --light-bg: #1a1f3a;
+    --dark-text: #0a1128;
+    --light-text: #a8b2d1;
+    --space-purple: #7c3aed;
+    --space-pink: #ec4899;
+    --space-blue: #3b82f6;
+    --space-cyan: #06b6d4;
+}
+
+/* ==================== GLOBAL STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-text);
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--secondary-color);
+    border-radius: 2px;
+}
+
+/* ==================== NAVBAR ==================== */
+.navbar {
+    background: rgba(10, 17, 40, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(124, 58, 237, 0.3);
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white !important;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--accent-color) !important;
+    transform: translateY(-2px);
+}
+
+/* ==================== HOME SECTION - ANGKASA ==================== */
+#home {
+    background: linear-gradient(135deg, #0a1128 0%, #1a1f3a 25%, #2d1b69 50%, #5d4e8e 75%, #7c3aed 100%);
+    position: relative;
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        radial-gradient(2px 2px at 20% 30%, white, transparent),
+        radial-gradient(2px 2px at 60% 70%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 80% 10%, white, transparent),
+        radial-gradient(2px 2px at 90% 60%, white, transparent),
+        radial-gradient(1px 1px at 33% 80%, white, transparent),
+        radial-gradient(1px 1px at 15% 90%, white, transparent);
+    background-size: 200% 200%;
+    animation: stars 60s linear infinite;
+    opacity: 0.6;
+}
+
+@keyframes stars {
+    0% { background-position: 0 0, 40% 60%, 130% 270%, 70% 100%, 0 0, 40% 60%, 130% 270%; }
+    100% { background-position: 100% 100%, 140% 160%, 230% 370%, 170% 200%, 100% 100%, 140% 160%, 230% 370%; }
+}
+
+.home-content {
+    position: relative;
+    z-index: 1;
+}
+
+.home-content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.home-content .lead {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background: rgba(124, 58, 237, 0.2);
+    color: white;
+    border-radius: 50%;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    border: 2px solid rgba(124, 58, 237, 0.3);
+}
+
+.social-links a:hover {
+    background: linear-gradient(135deg, var(--space-purple), var(--space-pink));
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
+    border-color: var(--accent-color);
+}
+
+/* ==================== ABOUT SECTION ==================== */
+#about {
+    background: linear-gradient(180deg, #0a1128 0%, #1a1f3a 100%);
+    color: #e2e8f0;
+}
+
+#about .section-title {
+    color: white;
+}
+
+#about .section-title::after {
+    background: linear-gradient(90deg, var(--space-purple), var(--space-pink));
+}
+
+.profile-img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.4);
+    transition: transform 0.3s;
+    border: 3px solid rgba(124, 58, 237, 0.3);
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 50px rgba(124, 58, 237, 0.6);
+}
+
+.about-info {
+    padding: 20px;
+}
+
+.about-info h3 {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.about-info p {
+    color: #cbd5e1;
+}
+
+.info-item {
+    margin-bottom: 15px;
+    color: #cbd5e1;
+}
+
+.info-item strong {
+    color: var(--accent-color);
+    margin-right: 10px;
+}
+
+.info-item i {
+    color: var(--space-purple);
+}
+
+/* ==================== RESUME SECTION ==================== */
+#resume {
+    background: linear-gradient(180deg, #1a1f3a 0%, #0a1128 100%);
+    color: #e2e8f0;
+}
+
+#resume .section-title {
+    color: white;
+}
+
+#resume .section-title::after {
+    background: linear-gradient(90deg, var(--space-cyan), var(--space-blue));
+}
+
+#resume h3 {
+    color: var(--accent-color);
+}
+
+.timeline {
+    position: relative;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--space-purple), var(--space-pink), var(--space-cyan));
+}
+
+.timeline-item {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline-card {
+    background: rgba(26, 31, 58, 0.6);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(124, 58, 237, 0.3);
+    transition: all 0.3s;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.timeline-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.5);
+    border-color: var(--accent-color);
+}
+
+.timeline-card h4 {
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.timeline-card .year {
+    color: var(--space-cyan);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.timeline-card p {
+    color: #cbd5e1;
+}
+
+.timeline-card i {
+    color: var(--space-purple);
+}
+
+/* ==================== SKILLS SECTION ==================== */
+#skills {
+    background: var(--light-bg);
+}
+
+.skill-item {
+    margin-bottom: 30px;
+}
+
+.skill-name {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.progress {
+    height: 25px;
+    border-radius: 10px;
+    background: #ddd;
+}
+
+.progress-bar {
+    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.skill-description {
+    font-size: 0.9rem;
+    color: var(--light-text);
+    margin-top: 5px;
+}
+
+/* ==================== PORTFOLIO SECTION ==================== */
+#portfolio {
+    background: white;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
+}
+
+.portfolio-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    height: 100%;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.portfolio-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.portfolio-card .card-body {
+    padding: 20px;
+}
+
+.portfolio-card h5 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* ==================== CONTACT SECTION ==================== */
+#contact {
+    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+    color: white;
+}
+
+#contact .section-title {
+    color: white;
+}
+
+#contact .section-title::after {
+    background: white;
+}
+
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.form-control {
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+}
+
+.btn-send {
+    background: white;
+    color: var(--secondary-color);
+    padding: 12px 40px;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-send:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+.contact-info {
+    margin-top: 30px;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-info-item i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: white;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background: #1a252f;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .home-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
