@@ -291,79 +291,117 @@ section {
 
 /* ==================== SKILLS SECTION ==================== */
 #skills {
-    background: var(--light-bg);
+    background: #0a1128; /* Sesuaikan dengan warna primer gelap */
+    color: #e2e8f0;
+}
+
+#skills .section-title {
+    color: white;
+}
+
+#skills .section-title::after {
+    background: linear-gradient(90deg, var(--space-purple), var(--space-pink));
 }
 
 .skill-item {
+    background: rgba(26, 31, 58, 0.6);
+    padding: 25px;
     margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    box-shadow: 0 5px 20px rgba(124, 58, 237, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+    border-color: var(--accent-color);
 }
 
 .skill-name {
     font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--primary-color);
+    color: #e2e8f0;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.skill-name i {
+    color: var(--accent-color);
+    margin-right: 12px;
+    font-size: 1.5rem;
+    width: 25px; /* Memberi ruang agar teks sejajar */
+    text-align: center;
 }
 
 .progress {
     height: 25px;
-    border-radius: 10px;
-    background: #ddd;
+    border-radius: 15px;
+    background: rgba(10, 17, 40, 0.8);
+    padding: 4px;
+    overflow: visible; /* Biarkan progress-bar terlihat */
 }
 
 .progress-bar {
-    background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
-    border-radius: 10px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--space-purple), var(--space-pink), var(--space-cyan));
+    background-size: 300% 300%;
     transition: width 1s ease;
+    animation: gradient-animation 3s ease-in-out infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
 .skill-description {
     font-size: 0.9rem;
     color: var(--light-text);
-    margin-top: 5px;
+    margin-top: 10px;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* ==================== PORTFOLIO SECTION ==================== */
+/* Ganti style #portfolio yang lama dengan ini */
 #portfolio {
-    background: white;
+    background: #0a1128; /* Warna primer gelap */
+    color: #e2e8f0; /* Warna teks terang */
 }
 
-.portfolio-item {
-    margin-bottom: 30px;
+#portfolio .section-title {
+    color: white;
+}
+
+#portfolio .section-title::after {
+    background: linear-gradient(90deg, var(--space-purple), var(--space-pink));
 }
 
 .portfolio-card {
-    border: none;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: all 0.3s;
-    height: 100%;
-}
-
-.portfolio-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-}
-
-.portfolio-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.portfolio-card .card-body {
-    padding: 20px;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    background: rgba(26, 31, 58, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 20px rgba(124, 58, 237, 0.3);
 }
 
 .portfolio-card h5 {
-    color: var(--primary-color);
-    font-weight: 600;
+    color: var(--accent-color); /* Sesuaikan warna judul kartu */
+}
+
+.portfolio-card .card-text {
+    color: #cbd5e1; /* Sesuaikan warna teks pada kartu */
 }
 
 /* ==================== CONTACT SECTION ==================== */
 #contact {
-    background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-    color: white;
+    background: #0a1128;
+    color: #e2e8f0;
 }
 
 #contact .section-title {
@@ -371,59 +409,86 @@ section {
 }
 
 #contact .section-title::after {
-    background: white;
+    background: linear-gradient(90deg, var(--space-blue), var(--space-cyan));
 }
 
 .contact-form {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(26, 31, 58, 0.6);
     backdrop-filter: blur(10px);
     padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.3);
 }
 
-.form-control {
-    border: none;
+.input-group-custom {
+    position: relative;
+}
+
+.input-group-custom i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.input-group-custom .form-control {
+    border: 1px solid rgba(124, 58, 237, 0.2);
     border-radius: 10px;
-    padding: 15px;
-    margin-bottom: 20px;
-    background: rgba(255, 255, 255, 0.9);
-}
-
-.form-control:focus {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
-}
-
-.btn-send {
-    background: white;
-    color: var(--secondary-color);
-    padding: 12px 40px;
-    border: none;
-    border-radius: 25px;
-    font-weight: 600;
+    padding: 15px 15px 15px 45px;
+    background: rgba(10, 17, 40, 0.9);
+    color: white;
     transition: all 0.3s;
 }
 
-.btn-send:hover {
-    background: var(--accent-color);
+.input-group-custom .form-control::placeholder {
+    color: #a8b2d1;
+}
+
+.input-group-custom .form-control:focus {
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.5);
+    background: rgba(10, 17, 40, 1);
+    border-color: var(--accent-color);
+}
+
+.input-group-custom .form-control:focus + i {
+    color: var(--space-pink);
+}
+
+.btn-send {
+    background: linear-gradient(135deg, var(--space-purple), var(--space-pink));
     color: white;
-    transform: scale(1.05);
+    padding: 12px 40px;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(236, 72, 153, 0.3);
+}
+
+.btn-send:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(236, 72, 153, 0.5);
 }
 
 .contact-info {
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .contact-info-item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    color: #e2e8f0;
 }
 
 .contact-info-item i {
     font-size: 1.5rem;
     margin-right: 15px;
-    color: white;
+    color: var(--accent-color);
 }
 
 /* ==================== FOOTER ==================== */
