@@ -1,54 +1,63 @@
 /* ==================== VARIABEL WARNA - TEMA ANGKASA ==================== */
+/* Ini adalah bagian TERPENTING untuk mengubah tema warna.
+    Anda hanya perlu mengubah kode warna (misal: #0a1128) di sini, 
+    dan seluruh website akan otomatis berubah.
+    Gunakan Google Color Picker untuk mencari kode warna yang Anda suka.
+*/
 :root {
-    --primary-color: #0a1128;
-    --secondary-color: #5d4e8e;
-    --accent-color: #b185db;
-    --light-bg: #1a1f3a;
-    --dark-text: #0a1128;
-    --light-text: #a8b2d1;
-    --space-purple: #7c3aed;
-    --space-pink: #ec4899;
-    --space-blue: #3b82f6;
-    --space-cyan: #06b6d4;
+    --primary-color: #0a1128;     /* Warna background paling gelap */
+    --secondary-color: #5d4e8e;   /* Warna sekunder (misal: garis bawah judul) */
+    --accent-color: #b185db;      /* Warna aksen (misal: teks judul, ikon) */
+    --light-bg: #1a1f3a;          /* Warna background sedikit lebih terang */
+    --dark-text: #0a1128;         /* Warna teks untuk background terang (tidak terpakai di tema gelap ini) */
+    --light-text: #a8b2d1;        /* Warna teks paragraf (putih keabuan) */
+    --space-purple: #7c3aed;      /* Warna ungu untuk gradient */
+    --space-pink: #ec4899;        /* Warna pink untuk gradient */
+    --space-blue: #3b82f6;        /* Warna biru untuk gradient */
+    --space-cyan: #06b6d4;        /* Warna cyan untuk gradient */
 }
 
-/* ==================== GLOBAL STYLES ==================== */
+/* ==================== GLOBAL STYLES (Pengaturan Umum) ==================== */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ini adalah pengaturan standar, biarkan saja */
 }
 
 body {
+    /* FONT UTAMA: Ganti 'Poppins' jika Anda ingin font lain (harus di-import dari Google Fonts di HTML) */
     font-family: 'Poppins', sans-serif;
-    color: var(--dark-text);
-    overflow-x: hidden;
+    color: var(--dark-text); /* Warna teks default (tidak terlalu terpakai di tema gelap) */
+    overflow-x: hidden; /* Mencegah scroll horizontal */
 }
 body::-webkit-scrollbar {
-    display: none;
+    display: none; /* Menghilangkan scrollbar di beberapa browser */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Membuat scroll saat klik menu menjadi halus */
 }
 
+/* Pengaturan default untuk semua <section> */
 section {
-    padding: 80px 0;
-    min-height: 100vh;
+    padding: 80px 0; /* Jarak atas-bawah 80px, kiri-kanan 0 */
+    min-height: 100vh; /* Tinggi minimal 1 layar penuh */
     display: flex;
     align-items: center;
 }
 
+/* JUDUL SECTION (Misal: "Tentang Saya", "Resume Saya") */
 .section-title {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Ukuran font judul */
     font-weight: 700;
     text-align: center;
     margin-bottom: 50px;
-    color: var(--primary-color);
+    color: var(--primary-color); /* Menggunakan warna gelap (di tema gelap, ini akan di-override) */
     position: relative;
     padding-bottom: 20px;
 }
 
+/* Garis bawah di judul section */
 .section-title::after {
     content: '';
     position: absolute;
@@ -57,47 +66,53 @@ section {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background: var(--secondary-color);
+    background: var(--secondary-color); /* Menggunakan warna sekunder */
     border-radius: 2px;
 }
 
-/* ==================== NAVBAR ==================== */
+/* ==================== NAVBAR (Menu Atas) ==================== */
 .navbar {
+    /* Ganti rgba(10, 17, 40, 0.95) untuk mengubah warna navbar. 0.95 adalah tingkat transparansi */
     background: rgba(10, 17, 40, 0.95) !important;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 20px rgba(124, 58, 237, 0.3);
+    backdrop-filter: blur(10px); /* Efek blur (keren, tapi bisa dihapus jika berat) */
+    box-shadow: 0 2px 20px rgba(124, 58, 237, 0.3); /* Bayangan navbar */
     padding: 15px 0;
     border-bottom: 1px solid rgba(124, 58, 237, 0.2);
 }
 
+/* Nama Brand di Navbar (MyPortfolio) */
 .navbar-brand {
     font-size: 1.5rem;
     font-weight: 700;
-    color: white !important;
+    color: white !important; /* Warna teks brand */
 }
 
+/* Link Menu (Home, About, ...) */
 .nav-link {
-    color: rgba(255, 255, 255, 0.8) !important;
+    color: rgba(255, 255, 255, 0.8) !important; /* Warna link menu */
     font-weight: 500;
     margin: 0 10px;
     transition: all 0.3s;
 }
 
+/* Efek saat link menu di-hover (disorot mouse) */
 .nav-link:hover {
-    color: var(--accent-color) !important;
+    color: var(--accent-color) !important; /* Warna berubah jadi warna aksen */
     transform: translateY(-2px);
 }
 
-/* ==================== HOME SECTION - ANGKASA ==================== */
+/* ==================== HOME SECTION (Tampilan Awal) ==================== */
 #home {
+    /* Background Gradient: Ini adalah kombinasi 5 warna. Anda bisa ganti warnanya */
     background: linear-gradient(135deg, #0a1128 0%, #1a1f3a 25%, #2d1b69 50%, #5d4e8e 75%, #7c3aed 100%);
     position: relative;
-    color: white;
+    color: white; /* Warna teks di section home */
     text-align: center;
     min-height: 100vh;
     overflow: hidden;
 }
 
+/* Efek Bintang (Advanced): Ini membuat titik-titik putih seperti bintang */
 #home::before {
     content: '';
     position: absolute;
@@ -114,10 +129,11 @@ section {
         radial-gradient(1px 1px at 33% 80%, white, transparent),
         radial-gradient(1px 1px at 15% 90%, white, transparent);
     background-size: 200% 200%;
-    animation: stars 60s linear infinite;
+    animation: stars 60s linear infinite; /* Animasi bintang bergerak */
     opacity: 0.6;
 }
 
+/* Animasi Bintang (Advanced) */
 @keyframes stars {
     0% { background-position: 0 0, 40% 60%, 130% 270%, 70% 100%, 0 0, 40% 60%, 130% 270%; }
     100% { background-position: 100% 100%, 140% 160%, 230% 370%, 170% 200%, 100% 100%, 140% 160%, 230% 370%; }
@@ -125,97 +141,102 @@ section {
 
 .home-content {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Memastikan konten ada di atas bintang */
 }
 
+/* Teks Judul Nama (H1) */
 .home-content h1 {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 20px;
 }
 
+/* Teks Subjudul (Lead) */
 .home-content .lead {
     font-size: 1.3rem;
     margin-bottom: 30px;
     opacity: 0.9;
 }
 
+/* Ikon Sosial Media (Lingkaran) */
 .social-links a {
     display: inline-block;
     width: 50px;
     height: 50px;
     line-height: 50px;
+    /* Warna lingkaran ikon (transparan ungu) */
     background: rgba(124, 58, 237, 0.2);
-    color: white;
-    border-radius: 50%;
+    color: white; /* Warna ikon */
+    border-radius: 50%; /* Membuat jadi lingkaran */
     margin: 0 10px;
     font-size: 1.2rem;
     transition: all 0.3s;
     border: 2px solid rgba(124, 58, 237, 0.3);
 }
 
+/* Efek saat ikon sosmed di-hover */
 .social-links a:hover {
-    background: linear-gradient(135deg, var(--space-purple), var(--space-pink));
+    background: linear-gradient(135deg, var(--space-purple), var(--space-pink)); /* Ganti warna hover */
     color: white;
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efek terangkat */
     box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
     border-color: var(--accent-color);
 }
 
-/* ==================== ABOUT SECTION ==================== */
+/* ==================== ABOUT SECTION (Tentang Saya) ==================== */
 #about {
-    background: linear-gradient(180deg, #0a1128 0%, #1a1f3a 100%);
-    color: #e2e8f0;
+    background: linear-gradient(180deg, #0a1128 0%, #1a1f3a 100%); /* Background gradient gelap */
+    color: #e2e8f0; /* Warna teks paragraf */
 }
 
+/* Judul section "Tentang Saya" (warna putih) */
 #about .section-title {
     color: white;
 }
-
+/* Garis bawah judul (warna gradient) */
 #about .section-title::after {
     background: linear-gradient(90deg, var(--space-purple), var(--space-pink));
 }
 
+/* Foto Profil */
 .profile-img {
     width: 100%;
-    max-width: 350px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.4);
+    max-width: 350px; /* Ukuran maksimal foto */
+    border-radius: 20px; /* Membuat sudut melengkung */
+    box-shadow: 0 10px 40px rgba(124, 58, 237, 0.4); /* Bayangan foto */
     transition: transform 0.3s;
     border: 3px solid rgba(124, 58, 237, 0.3);
 }
-
+/* Efek hover foto profil */
 .profile-img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Sedikit membesar */
     box-shadow: 0 15px 50px rgba(124, 58, 237, 0.6);
 }
 
 .about-info {
     padding: 20px;
 }
-
+/* Teks profesi (Web Developer & Designer) */
 .about-info h3 {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Warna aksen */
     font-weight: 600;
     margin-bottom: 20px;
 }
-
 .about-info p {
-    color: #cbd5e1;
+    color: #cbd5e1; /* Warna teks deskripsi diri */
 }
-
 .info-item {
     margin-bottom: 15px;
     color: #cbd5e1;
 }
-
+/* Teks (Nama, Alamat, Email) */
 .info-item strong {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Warna aksen */
     margin-right: 10px;
 }
-
+/* Ikon di data diri */
 .info-item i {
-    color: var(--space-purple);
+    color: var(--space-purple); /* Warna ungu */
 }
 
 /* ==================== RESUME SECTION ==================== */
@@ -223,89 +244,70 @@ section {
     background: linear-gradient(180deg, #1a1f3a 0%, #0a1128 100%);
     color: #e2e8f0;
 }
-
 #resume .section-title {
     color: white;
 }
-
 #resume .section-title::after {
     background: linear-gradient(90deg, var(--space-cyan), var(--space-blue));
 }
-
 #resume h3 {
     color: var(--accent-color);
 }
 
-.timeline {
-    position: relative;
-    padding: 20px 0;
-}
+/* CATATAN: CSS untuk .timeline, .timeline::before, dan .timeline-item 
+   telah dihapus karena kelas-kelas ini tidak digunakan di index.html 
+   dan berpotensi menyebabkan error layout.
+*/
 
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--space-purple), var(--space-pink), var(--space-cyan));
-}
-
-.timeline-item {
-    margin-bottom: 40px;
-    position: relative;
-}
-
+/* Kotak untuk item Pendidikan/Pengalaman */
 .timeline-card {
-    background: rgba(26, 31, 58, 0.6);
+    background: rgba(26, 31, 58, 0.6); /* Background kotak (transparan) */
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 5px 20px rgba(124, 58, 237, 0.3);
     transition: all 0.3s;
     border: 1px solid rgba(124, 58, 237, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Efek blur di background kotak */
+    margin-bottom: 30px; /* Ditambahkan agar ada jarak antar kartu */
 }
-
+/* Efek hover kotak resume */
 .timeline-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(124, 58, 237, 0.5);
     border-color: var(--accent-color);
 }
-
+/* Judul (misal: "SD Negeri 1 Kejawen") */
 .timeline-card h4 {
     color: var(--accent-color);
     font-weight: 600;
     margin-bottom: 10px;
 }
-
+/* Teks tahun */
 .timeline-card .year {
-    color: var(--space-cyan);
+    color: var(--space-cyan); /* Warna cyan */
     font-weight: 500;
     margin-bottom: 10px;
 }
-
 .timeline-card p {
-    color: #cbd5e1;
+    color: #cbd5e1; /* Warna teks deskripsi */
 }
-
 .timeline-card i {
     color: var(--space-purple);
 }
 
 /* ==================== SKILLS SECTION ==================== */
 #skills {
-    background: #0a1128; /* Sesuaikan dengan warna primer gelap */
+    background: #0a1128; 
     color: #e2e8f0;
 }
-
 #skills .section-title {
     color: white;
 }
-
 #skills .section-title::after {
     background: linear-gradient(90deg, var(--space-purple), var(--space-pink));
 }
 
+/* Kotak untuk item skill */
 .skill-item {
     background: rgba(26, 31, 58, 0.6);
     padding: 25px;
@@ -315,13 +317,13 @@ section {
     box-shadow: 0 5px 20px rgba(124, 58, 237, 0.2);
     transition: all 0.3s ease-in-out;
 }
-
 .skill-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
     border-color: var(--accent-color);
 }
 
+/* Nama skill (HTML & CSS) */
 .skill-name {
     font-weight: 600;
     color: #e2e8f0;
@@ -330,63 +332,66 @@ section {
     align-items: center;
     font-size: 1.1rem;
 }
-
 .skill-name i {
-    color: var(--accent-color);
+    color: var(--accent-color); /* Warna ikon skill */
     margin-right: 12px;
     font-size: 1.5rem;
-    width: 25px; /* Memberi ruang agar teks sejajar */
+    width: 25px; 
     text-align: center;
 }
 
+/* Background dari progress bar (yang abu-abu) */
 .progress {
     height: 25px;
     border-radius: 15px;
     background: rgba(10, 17, 40, 0.8);
     padding: 4px;
-    overflow: visible; /* Biarkan progress-bar terlihat */
+    overflow: visible; 
 }
 
+/* Bar progres (yang berwarna) */
 .progress-bar {
     border-radius: 12px;
+    /* Background gradient untuk bar */
     background: linear-gradient(90deg, var(--space-purple), var(--space-pink), var(--space-cyan));
     background-size: 300% 300%;
-    transition: width 1s ease;
-    animation: gradient-animation 3s ease-in-out infinite;
+    transition: width 1s ease; /* Animasi saat bar terisi */
+    animation: gradient-animation 3s ease-in-out infinite; /* Animasi warna gradient */
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
 }
 
+/* Deskripsi di bawah progress bar */
 .skill-description {
     font-size: 0.9rem;
-    color: var(--light-text);
+    color: var(--light-text); /* Warna teks putih keabuan */
     margin-top: 10px;
 }
 
+/* Animasi untuk gradient di progress bar (Advanced) */
 @keyframes gradient-animation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
-/* ==================== PORTFOLIO SECTION (REVISED) ==================== */
+/* ==================== PORTFOLIO SECTION (Karya) ==================== */
 #portfolio {
     background: #0a1128;
     color: #e2e8f0;
 }
-
 #portfolio .section-title {
     color: white;
 }
-
 #portfolio .section-title::after {
     background: linear-gradient(90deg, var(--space-purple), var(--space-pink));
 }
 
+/* Kartu untuk setiap item portfolio */
 .portfolio-card {
-    background: rgba(26, 31, 58, 0.6);
+    background: rgba(26, 31, 58, 0.6); /* Background kartu */
     border-radius: 15px;
     border: 1px solid rgba(124, 58, 237, 0.2);
     box-shadow: 0 5px 20px rgba(124, 58, 237, 0.2);
@@ -394,7 +399,7 @@ section {
     overflow: hidden; /* Penting agar gambar tidak keluar dari kartu */
     margin-bottom: 30px;
 }
-
+/* Efek hover kartu portfolio */
 .portfolio-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
@@ -403,76 +408,76 @@ section {
 
 .portfolio-img-container {
     position: relative;
-    overflow: hidden; /* Tambahkan ini agar gambar tetap rapi */
+    overflow: hidden; 
 }
-
+/* Gambar portfolio */
 .portfolio-img-container img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
+    height: 250px; /* Tinggi gambar (bisa diubah) */
+    object-fit: cover; /* Memastikan gambar pas tanpa distorsi */
     transition: transform 0.4s ease;
 }
-
+/* Efek zoom gambar saat kartu di-hover */
 .portfolio-card:hover .portfolio-img-container img {
-    transform: scale(1.1); /* Efek zoom pada gambar saat hover */
+    transform: scale(1.1); 
 }
 
+/* Overlay (lapisan warna) saat gambar di-hover */
 .portfolio-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    /* Warna gradient overlay */
     background: linear-gradient(135deg, rgba(124, 58, 237, 0.85), rgba(236, 72, 153, 0.85));
-    opacity: 0;
+    opacity: 0; /* Sembunyi secara default */
     transition: opacity 0.4s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
-
+/* Tampilkan overlay saat kartu di-hover */
 .portfolio-card:hover .portfolio-overlay {
-    opacity: 1; /* Munculkan overlay saat hover */
+    opacity: 1; 
 }
 
 .overlay-content h5 {
-    color: white;
+    color: white; /* Judul di overlay */
     font-weight: 600;
     margin-top: 15px;
 }
-
+/* Tombol link di overlay */
 .overlay-content .btn-view {
     display: inline-block;
     width: 50px;
     height: 50px;
     line-height: 50px;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.2); /* Tombol transparan putih */
     border-radius: 50%;
     color: white;
     font-size: 1.2rem;
     transition: all 0.3s;
 }
-
 .overlay-content .btn-view:hover {
-    background: white;
-    color: var(--space-pink);
+    background: white; /* Tombol jadi putih solid */
+    color: var(--space-pink); /* Ikon jadi pink */
     transform: scale(1.1);
 }
 
 .portfolio-card .card-body {
     padding: 25px;
 }
-
 .portfolio-card .card-text {
-    color: #cbd5e1;
+    color: #cbd5e1; /* Deskripsi singkat portfolio */
     font-size: 0.9rem;
     margin-bottom: 20px;
 }
-
+/* Tags (HTML, CSS, PHP) */
 .portfolio-card .tags .badge {
-    background-color: rgba(124, 58, 237, 0.2);
-    color: var(--accent-color);
+    background-color: rgba(124, 58, 237, 0.2); /* Background tag */
+    color: var(--accent-color); /* Warna teks tag */
     border: 1px solid rgba(124, 58, 237, 0.5);
     padding: 5px 10px;
     margin: 3px;
@@ -481,20 +486,19 @@ section {
     display: inline-block;
 }
 
-/* ==================== CONTACT SECTION ==================== */
+/* ==================== CONTACT SECTION (Kontak) ==================== */
 #contact {
     background: #0a1128;
     color: #e2e8f0;
 }
-
 #contact .section-title {
     color: white;
 }
-
 #contact .section-title::after {
     background: linear-gradient(90deg, var(--space-blue), var(--space-cyan));
 }
 
+/* Kotak formulir kontak */
 .contact-form {
     background: rgba(26, 31, 58, 0.6);
     backdrop-filter: blur(10px);
@@ -507,7 +511,7 @@ section {
 .input-group-custom {
     position: relative;
 }
-
+/* Ikon di dalam input form */
 .input-group-custom i {
     position: absolute;
     left: 15px;
@@ -517,86 +521,83 @@ section {
     font-size: 1.1rem;
     transition: color 0.3s;
 }
-
+/* Input (Nama, Email, Pesan) */
 .input-group-custom .form-control {
     border: 1px solid rgba(124, 58, 237, 0.2);
     border-radius: 10px;
-    padding: 15px 15px 15px 45px;
-    background: rgba(10, 17, 40, 0.9);
-    color: white;
+    padding: 15px 15px 15px 45px; /* Padding kiri agar ada ruang untuk ikon */
+    background: rgba(10, 17, 40, 0.9); /* Background input */
+    color: white; /* Warna teks yang diketik user */
     transition: all 0.3s;
 }
-
+/* Teks placeholder (Nama Lengkap, Email Anda, ...) */
 .input-group-custom .form-control::placeholder {
     color: #a8b2d1;
 }
-
+/* Efek saat input di-klik (focus) */
 .input-group-custom .form-control:focus {
-    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.5);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.5); /* Bayangan ungu */
     background: rgba(10, 17, 40, 1);
     border-color: var(--accent-color);
 }
-
 .input-group-custom .form-control:focus + i {
-    color: var(--space-pink);
+    color: var(--space-pink); /* Ikon berubah warna saat input aktif */
 }
 
+/* Tombol Kirim Pesan */
 .btn-send {
     background: linear-gradient(135deg, var(--space-purple), var(--space-pink));
     color: white;
     padding: 12px 40px;
     border: none;
-    border-radius: 50px;
+    border-radius: 50px; /* Tombol oval */
     font-weight: 600;
     transition: all 0.3s;
     box-shadow: 0 5px 20px rgba(236, 72, 153, 0.3);
 }
-
 .btn-send:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(236, 72, 153, 0.5);
 }
 
+/* Info kontak (Email, WA, Lokasi) */
 .contact-info {
     margin-top: 50px;
 }
-
 .contact-info-item {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
     color: #e2e8f0;
 }
-
 .contact-info-item i {
     font-size: 1.5rem;
     margin-right: 15px;
     color: var(--accent-color);
 }
 
-/* ==================== FOOTER ==================== */
+/* ==================== FOOTER (Bagian Bawah) ==================== */
 footer {
-    background: #1a252f;
-    color: white;
+    background: #1a252f; /* Warna background footer */
+    color: white; /* Warna teks footer */
     text-align: center;
     padding: 20px 0;
 }
 
-/* ==================== RESPONSIVE ==================== */
+/* ==================== RESPONSIVE (Tampilan di HP) ==================== */
+/* Ini adalah pengaturan agar website terlihat bagus di layar kecil (HP).
+   Biasanya tidak perlu diubah oleh pemula.
+*/
 @media (max-width: 768px) {
     .home-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.5rem; /* Ukuran font judul di HP */
     }
 
     .section-title {
-        font-size: 2rem;
-    }
-
-    .timeline::before {
-        left: 0;
+        font-size: 2rem; /* Ukuran font judul section di HP */
     }
 
     section {
-        padding: 60px 0;
+        padding: 60px 0; /* Jarak atas-bawah section di HP */
     }
 }
