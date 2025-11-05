@@ -1,8 +1,7 @@
 /* ==================== VARIABEL WARNA - TEMA ANGKASA ==================== */
-/* Ini adalah bagian TERPENTING untuk mengubah tema warna.
+/* 
     Anda hanya perlu mengubah kode warna (misal: #0a1128) di sini, 
     dan seluruh website akan otomatis berubah.
-    Gunakan Google Color Picker untuk mencari kode warna yang Anda suka.
 */
 :root {
     --primary-color: #0a1128;     /* Warna background paling gelap */
@@ -375,115 +374,6 @@ section {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
-}
-
-/* ==================== PORTFOLIO SECTION (Karya) ==================== */
-#portfolio {
-    background: #0a1128;
-    color: #e2e8f0;
-}
-#portfolio .section-title {
-    color: white;
-}
-#portfolio .section-title::after {
-    background: linear-gradient(90deg, var(--space-purple), var(--space-pink));
-}
-
-/* Kartu untuk setiap item portfolio */
-.portfolio-card {
-    background: rgba(26, 31, 58, 0.6); /* Background kartu */
-    border-radius: 15px;
-    border: 1px solid rgba(124, 58, 237, 0.2);
-    box-shadow: 0 5px 20px rgba(124, 58, 237, 0.2);
-    transition: all 0.3s ease-in-out;
-    overflow: hidden; /* Penting agar gambar tidak keluar dari kartu */
-    margin-bottom: 30px;
-}
-/* Efek hover kartu portfolio */
-.portfolio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
-    border-color: var(--accent-color);
-}
-
-.portfolio-img-container {
-    position: relative;
-    overflow: hidden; 
-}
-/* Gambar portfolio */
-.portfolio-img-container img {
-    width: 100%;
-    height: 250px; /* Tinggi gambar (bisa diubah) */
-    object-fit: cover; /* Memastikan gambar pas tanpa distorsi */
-    transition: transform 0.4s ease;
-}
-/* Efek zoom gambar saat kartu di-hover */
-.portfolio-card:hover .portfolio-img-container img {
-    transform: scale(1.1); 
-}
-
-/* Overlay (lapisan warna) saat gambar di-hover */
-.portfolio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* Warna gradient overlay */
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.85), rgba(236, 72, 153, 0.85));
-    opacity: 0; /* Sembunyi secara default */
-    transition: opacity 0.4s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-/* Tampilkan overlay saat kartu di-hover */
-.portfolio-card:hover .portfolio-overlay {
-    opacity: 1; 
-}
-
-.overlay-content h5 {
-    color: white; /* Judul di overlay */
-    font-weight: 600;
-    margin-top: 15px;
-}
-/* Tombol link di overlay */
-.overlay-content .btn-view {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    line-height: 50px;
-    background: rgba(255, 255, 255, 0.2); /* Tombol transparan putih */
-    border-radius: 50%;
-    color: white;
-    font-size: 1.2rem;
-    transition: all 0.3s;
-}
-.overlay-content .btn-view:hover {
-    background: white; /* Tombol jadi putih solid */
-    color: var(--space-pink); /* Ikon jadi pink */
-    transform: scale(1.1);
-}
-
-.portfolio-card .card-body {
-    padding: 25px;
-}
-.portfolio-card .card-text {
-    color: #cbd5e1; /* Deskripsi singkat portfolio */
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-}
-/* Tags (HTML, CSS, PHP) */
-.portfolio-card .tags .badge {
-    background-color: rgba(124, 58, 237, 0.2); /* Background tag */
-    color: var(--accent-color); /* Warna teks tag */
-    border: 1px solid rgba(124, 58, 237, 0.5);
-    padding: 5px 10px;
-    margin: 3px;
-    font-weight: 500;
-    border-radius: 5px;
-    display: inline-block;
 }
 
 /* ==================== CONTACT SECTION (Kontak) ==================== */

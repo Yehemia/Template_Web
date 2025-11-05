@@ -76,16 +76,6 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     
     // Reset form (mengosongkan input)
     this.reset();
-    
-    /* CATATAN UNTUK PEMULA:
-       Untuk membuat form ini benar-benar mengirim email, Anda butuh "backend".
-       Cara paling mudah untuk pemula adalah menggunakan layanan gratis seperti:
-       1. Formspree (https://formspree.io/)
-       2. EmailJS (https://www.emailjs.com/)
-       
-       Anda perlu mengganti tag <form> di HTML dan mungkin menghapus kode ini.
-       Ikuti petunjuk dari layanan tersebut.
-    */
 });
 
 // ==================== SKILL PROGRESS BAR ANIMATION ====================
